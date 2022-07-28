@@ -1,0 +1,57 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>LOGIN</title>
+
+    <link rel="stylesheet" href="{%static 'css/login.css'%}">
+
+    <style>
+        body
+            {
+                background-image: url("{%static 'images/bgimage_login.jpg'%}");
+                background-repeat: no-repeat;
+                background-size: 1500px 900px;
+                background-attachment: fixed;
+            }
+    </style>
+</head>
+
+<body>
+    <!-- <ul>
+		<li><a href="{% url 'home' %}">HOME</a></li>
+		<li><a href="{% url 'signup' %}">SIGN UP</a></li>
+		<li><a href="{% url 'contactus' %}">CONTACT US</a></li>
+		<li><a href="{% url 'aboutus' %}">ABOUT US</a></li>
+	</ul> -->
+    
+        <div class="log-in">
+            <h1>LOGIN</h1>
+        </div>
+        <br>
+        <form method="POST">
+
+            {% csrf_token %}
+            
+            <div class="Email-field">
+                Email: <input type="email" name="email" placeholder="Email"> 
+            </div>
+
+            <br>
+            <div class="Password-field"> 
+                Password: <input type="password" name="pass" placeholder="Password">
+            </div>
+
+            <br>
+            <div class="Login-button">
+                <input type="submit" value="LOGIN">
+            </div>
+
+        </form>
+</body>
+{% endblock %}

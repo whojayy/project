@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product details</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
+    crossorigin="anonymous">   
+
+</head>
+<body>
+    <center>
+        <h1>PRODUCT DETAILS</h1>
+        <br>
+        <div class="container-md">
+            Name: {{v.name}} <br><br>
+            Price: {{v.price}} <br><br>
+            Des: {{v.des}} <br><br>
+            
+            <img src="{{ v.img.url }}" style="height: 250px; width: 400px;"> <br><br>
+
+            <!-- Image:{{v.img}} <br><br> -->
+
+            Review: {{v.review}} <br><br>
+        </div>
+    </center>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CONTACT US</title>
+    
+</head>
+
+<link rel="stylesheet" href="{%static 'css/signup.css'%}">
+
+<body>
+
+    <!-- <ul>
+		<li><a href="{% url 'home' %}">HOME</a></li>
+        <li><a href="{% url 'signup' %}">SIGN  UP</a></li>
+		<li><a href="{% url 'login' %}">LOGIN</a></li>
+		<li><a href="{% url 'aboutus' %}">ABOUT US</a></li>
+	</ul> -->
+
+    <center>
+        <h1>CONTACT US FORM</h1>
+        <br>
+        <form>
+           Your name: <input type="text" placeholder="" maxlength="10" required>
+           <br><br>
+           Email: <input type="Email" placeholder="" required>
+           <br><br>
+           Phone number: <input type="text" placeholder="" maxlength="10" required>
+           <br><br>
+           Feedback:<br>
+           <textarea placeholder="We would love to hear from you !!"></textarea>
+           <br><br>
+           <input type="submit" value="SUBMIT"> 
+        </form>    
+    </center>
+
+</body>
+{% endblock %}

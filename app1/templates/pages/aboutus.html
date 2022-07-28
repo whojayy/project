@@ -1,0 +1,72 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ABOUT US</title>
+
+    <link rel="stylesheet" href="{%static 'css/aboutus.css'%}">
+</head>
+
+<body>
+
+  <!-- <ul>
+		<li><a href="{% url 'home' %}">HOME</a></li>
+    <li><a href="{% url 'signup' %}">SIGN  UP</a></li>
+		<li><a href="{% url 'login' %}">LOGIN</a></li>
+		<li><a href="{% url 'contactus' %}">CONTACT US</a></li>
+	</ul> -->
+
+    <center>
+        <h1>ABOUT US</h1>
+    </center>
+    <strong>
+        <h2>
+            TEAM MEMBERS: Jishan, Jay, Meet, Purv
+        </h2>
+    </strong>
+    <h3>
+        Team member roles are as follows:
+    </h3>
+    <table class="center">
+        <thead>
+            <tr>
+              <th scope="col">Sr no.</th>
+              <th scope="col">Name</th>
+              <th scope="col">Designation</th>
+              <th scope="col">Roles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Jishan Mahida</td>
+              <td>Team leader</td>
+              <td>Project head</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jay Patel</td>
+              <td>Team member</td>
+              <td>Frontend</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Meet Prajapati</td>
+              <td>Team member</td>
+              <td>Backend</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Purv Ankola</td>
+              <td>Team member</td>
+              <td>Security measures</td>
+            </tr>
+          </tbody>
+    </table>    
+</body>
+{% endblock %}

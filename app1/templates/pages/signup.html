@@ -1,0 +1,89 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+	<title>SIGNUP FORM</title>
+
+	<script type="text/javascript">
+		function validate()
+		{
+			var user = document.getElementById("e").value;
+			var user2 = document.getElementById("e");
+			var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			if (re.test(user))
+			{
+				alert("done");
+				return true;
+			}
+			else
+			{
+				user2.style.border = "red solid 3px";
+				return false;
+			}
+		}
+	</script>
+
+	<link  rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+<style>
+	body
+		{
+			background-image: url("{%static 'images/bgimage_signup.avif'%}");
+			background-repeat: no-repeat;
+			background-size: 1500px 900px;
+			background-attachment: fixed;
+		}
+</style>
+
+</head>
+<body>
+	{% csrf_token %}
+
+	<!-- <ul>
+		<li><a href="{% url 'home' %}">HOME</a></li>
+		<li><a href="{% url 'login' %}">LOGIN</a></li>
+		<li><a href="{% url 'contactus' %}">CONTACT US</a></li>
+		<li><a href="{% url 'aboutus' %}">ABOUT US</a></li>
+	</ul> -->
+	
+	<center>
+
+		<h1>SIGN UP FORM</h1>
+		<br>
+		<form method='POST'>
+
+			{% csrf_token %}
+			
+			<fieldset style="width:300px">
+				<table>
+					<tr>
+						Username: <input type="name" name="name" placeholder="Username" maxlength="10" required>
+					</tr>
+					<br><br>
+					<tr>
+						Email: <input type="email" name="email" placeholder="username@gmail.com" id="e" required>
+					</tr>
+					<br><br>
+					<tr>
+						Phone No.: <input type="contactno" name="mob_no" placeholder="Phone number" required>
+					</tr>
+					<br><br>
+					<tr>
+						Password: <input type="password" name="pass" placeholder="Password" required>
+					</tr>
+					<br><br>
+					<tr>
+						Re-enter password: <input type="password" placeholder="Password" required>
+					</tr>
+					<br><br>
+					<tr><input type="submit" onclick="validate()" value="SIGN UP">
+					</tr>
+				</table>
+			</fieldset>
+		</form>
+
+	</center>
+</body>
+{% endblock %}

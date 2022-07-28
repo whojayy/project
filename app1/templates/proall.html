@@ -1,0 +1,44 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCT LIST</title>
+    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+      rel="stylesheet" 
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
+      crossorigin="anonymous">
+
+</head>
+<body>
+    <center>
+        <table class="table table-dark table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>View</th>
+                <th>Delete</th>
+            </tr>
+            <tr>
+
+            {% for i in l %}
+                
+                <td>{{ i.name }}</td>
+                <td>{{ i.price }}</td>
+                <td><img src="{{ i.img.url }}" style="height: 250px; width: 450px;"></td>
+                <td><a href="{% url 'proview' i.id %}">View</a></td>
+                <td><a href="{% url 'prodel' i.id %}">Delete</a></td>
+        
+            </tr>
+
+            {% endfor %}
+        
+        </table>
+    </center>
+</body>
+{% endblock %}
